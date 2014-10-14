@@ -259,9 +259,11 @@ function getList(blocks, depth) {
 
   if (gFilterEls.flags.checked) {
       gColumns["flags"] = "Flags";
+      gColumns["cf_blocking_loop"] = "BL";
       gColumns["attachments"] = "Attachment Flags";
   } else {
       delete gColumns["flags"];
+      delete gColumns["cf_blocking_loop"];
       delete gColumns["attachments"];
   }
 
