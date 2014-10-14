@@ -10,9 +10,8 @@
 
 var gMetabugs = {
   // "alias": bug number,
-  // TODO: update this object for your needs
-  //"australis-meta": 870032,
-  //"australis-tabs": 732583,
+  "fxa": 979845,
+  "rooms": 1074659,
 };
 var gDefaultMetabug = null; // Example: gMetabugs["australis-meta"];
 
@@ -173,9 +172,11 @@ function filterChanged(evt) {
 
   if (gFilterEls.flags.checked) {
       gColumns["flags"] = "Flags";
+      gColumns["cf_blocking_loop"] = "BL";
       gColumns["attachments"] = "Attachment Flags";
   } else {
       delete gColumns["flags"];
+      delete gColumns["cf_blocking_loop"];
       delete gColumns["attachments"];
   }
 
@@ -240,9 +241,9 @@ function getList(blocks, depth) {
         heading.textContent = "Bug " + blocks;
       }
     } else {
-      heading.textContent = "Dependency Bug List";
+      heading.textContent = "Hello Bug List";
     }
-    document.title = "Dependency Bug List" + (blocks ? " - " + blocks : "");
+    document.title = "Hello Bug List" + (blocks ? " - " + blocks : "");
 
     var treelink = document.getElementById("treelink");
     if (metaBug) {
